@@ -25,6 +25,8 @@ def get_time_table(time_table1):
     
     
     st.table(result)
+    st.write("Last update 14th Aug'23")
+  
     for sub in result:
         
         if sub=='English':
@@ -33,4 +35,4 @@ def get_time_table(time_table1):
 
 
 get_time_table(time_table)
-st.write("Last update 14th Aug'23")
+
