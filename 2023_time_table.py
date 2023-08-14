@@ -5,7 +5,7 @@
 
 
 import datetime as dt
-from datetime importhttp://localhost:8888/notebooks/2023_time_table.ipynb# timedelta
+from datetime import timedelta
 time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths'],
              'Tuesday':['P.T','Hindi','English','Lib','Maths','EVS'],
              'Wednesday':['Computer','English','CCA','English','P.T','EVS','Maths'],
@@ -27,5 +27,5 @@ def get_time_table(time_table):
     print('If english period then carry colors')
     
     
-get_time_table()
+get_time_table(time_table)
 
