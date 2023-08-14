@@ -28,7 +28,8 @@ def get_time_table(time_table):
     st.write(day + ' time table total',len(result),'periods.')
     
     return result
-    st.write('If english period then carry colors')
+    st.write(result)
+    st.write("If english period then carry colors")
     
     
 get_time_table(time_table)
