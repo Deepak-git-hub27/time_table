@@ -4,7 +4,7 @@ import streamlit as st
 
 today=dt.date.today()+dt.timedelta(days=1)
 
-st.title("Your School 2nd B Time table for today")
+st.title(f"Your School 2nd B Time table for {today}")
 
 time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths'],
              'Tuesday':['P.T','Hindi','English','Lib','Maths','EVS'],
