@@ -23,9 +23,8 @@ def get_time_table(time_table1):
     result=time_table1[day]
     
     st.write(day + ' time table total',len(result),'periods.')
-    values = list(result.values())
-
-    st.table(values)  
+   
+    st.table(result)  
     for sub in result:        
         if sub=='English':
             st.write("Tomorrow is english period kindly carry colors.")
