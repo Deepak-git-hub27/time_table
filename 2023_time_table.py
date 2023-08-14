@@ -24,7 +24,7 @@ def get_time_table(time_table1):
   
     
     
-    st.write(result)
+    st.table(result)
     for sub in result:
         
         if sub=='English':
