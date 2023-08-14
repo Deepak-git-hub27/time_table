@@ -31,7 +31,7 @@ def get_time_table(time_table1):
         
         if sub=='English':
 
-            st.write("Today is english period kindly carry colors.")
+            st.write("Tomorrow is english period kindly carry colors.")
     if day=='Tuesday'or'Thursday':
         st.write("Kindly wear PT uniform.")
              
