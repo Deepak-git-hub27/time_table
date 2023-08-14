@@ -6,6 +6,10 @@
 
 import datetime as dt
 from datetime import timedelta
+import streamlit as st
+
+st.write("Here's our first attempt at using data to create a table:")
+
 time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths'],
              'Tuesday':['P.T','Hindi','English','Lib','Maths','EVS'],
              'Wednesday':['Computer','English','CCA','English','P.T','EVS','Maths'],
