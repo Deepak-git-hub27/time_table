@@ -2,9 +2,10 @@ import datetime as dt
 from datetime import timedelta
 import streamlit as st
 
-today=dt.date.today()+dt.timedelta(days=1).strftime('%A')
+today=dt.date.today()+dt.timedelta(days=1)
+day=today.strftime('%A')
 
-st.title(f"Your School 2nd B Time table for {today}")
+st.title(f"Your School 2nd B Time table for {day}")
 
 time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths'],
              'Tuesday':['P.T','Hindi','English','Lib','Maths','EVS'],
