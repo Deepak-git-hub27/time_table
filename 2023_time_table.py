@@ -2,7 +2,7 @@ import datetime as dt
 from datetime import timedelta
 import streamlit as st
 
-today=dt.date.today()+dt.timedelta(days=1)
+today=dt.date.today()+dt.timedelta(days=1).strftime('%A')
 
 st.title(f"Your School 2nd B Time table for {today}")
 
