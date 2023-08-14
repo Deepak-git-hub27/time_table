@@ -20,17 +20,10 @@ def get_time_table(time_table1):
     day=today.strftime('%A')
     result=time_table1[day]
     
-    st.write(day + ' time table total',len(result),'periods.')
-  
-    
-    
-    st.table(result)
-    
-  
-    for sub in result:
-        
+    st.write(day + ' time table total',len(result),'periods.')   
+    st.table(result)  
+    for sub in result:        
         if sub=='English':
-
             st.write("Tomorrow is english period kindly carry colors.")
     if day=='Tuesday'or'Thursday':
         st.write("Kindly wear PT uniform.")
