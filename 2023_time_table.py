@@ -2,7 +2,7 @@ import datetime as dt
 from datetime import timedelta
 import streamlit as st
 
-st.title("Your School Time table")
+st.title("Your School 2nd B Time table")
 
 time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths'],
              'Tuesday':['P.T','Hindi','English','Lib','Maths','EVS'],
