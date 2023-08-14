@@ -26,9 +26,10 @@ def get_time_table(time_table):
     day=today.strftime('%A')
     result=time_table[day]
     st.write(day + ' time table total',len(result),'periods.')
-    
+     
     return result
-    st.write(result)
+    for res in result:
+      st.write(res)
     st.write("If english period then carry colors")
     
     
