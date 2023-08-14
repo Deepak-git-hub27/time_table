@@ -16,7 +16,6 @@ time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths
              'Sunday':['Holiday'],
              
             }
-
 def get_time_table(time_table1):
     
     today=dt.date.today()+dt.timedelta(days=1)
@@ -24,7 +23,7 @@ def get_time_table(time_table1):
     result=time_table1[day]
     
     st.write(day + ' time table total',len(result),'periods.')   
-    st.table(result)  
+    st.table(result.values())  
     for sub in result:        
         if sub=='English':
             st.write("Tomorrow is english period kindly carry colors.")
