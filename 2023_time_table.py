@@ -31,5 +31,6 @@ def get_time_table(time_table1):
 
             st.write("Today is english period kindly carry colors")
 
-st.write("Last update 14th Aug'23")
+
 get_time_table(time_table)
+st.write("Last update 14th Aug'23")
