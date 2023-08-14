@@ -1,14 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import datetime as dt
 from datetime import timedelta
 import streamlit as st
 
-st.write("Your School Time table")
+st.title("Your School Time table")
 
 time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths'],
              'Tuesday':['P.T','Hindi','English','Lib','Maths','EVS'],
@@ -20,18 +14,21 @@ time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths
              
             }
 
-def get_time_table(time_table):
+def get_time_table(time_table1):
     
     today=dt.date.today()+dt.timedelta(days=1)
     day=today.strftime('%A')
-    result=time_table[day]
-    st.write(day + ' time table total',len(result),'periods.')
-     
-    return result
-    for res in result:
-      st.write(res)
-    st.write("If english period then carry colors")
+    result=time_table1[day]
     
+    st.write(day + ' time table total',len(result),'periods.')
+  
+    
+    
+    st.write(result)
+    for sub in result:
+        
+        if sub=='English':
+
+            st.write("Today is english period kindly carry colors")
     
 get_time_table(time_table)
-
