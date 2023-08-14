@@ -5,7 +5,7 @@ import streamlit as st
 today=dt.date.today()+dt.timedelta(days=1)
 day=today.strftime('%A')
 
-st.title(f"2nd B Time table for {day}")
+st.header(f"2nd B Time table for {day}")
 
 time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths'],
              'Tuesday':['P.T','Hindi','English','Lib','Maths','EVS'],
