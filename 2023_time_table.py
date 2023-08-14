@@ -22,7 +22,7 @@ def get_time_table(time_table1):
    # day=today.strftime('%A')
     result=time_table1[day]
     
-    st.write('total',str(len(result)),'periods.')
+    st.write('Total',str(len(result)),'periods.')
    
     st.table(result)  
     for sub in result:        
