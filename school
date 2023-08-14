@@ -19,3 +19,5 @@ def get_time_table(time_table):
     
     return result
     print('If english period then carry colors')
+
+get_time_table()
