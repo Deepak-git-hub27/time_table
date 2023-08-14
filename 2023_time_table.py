@@ -28,6 +28,7 @@ def check_holiday():
         if dt.date.today()+dt.timedelta(days=1)==datetime.strptime(holiday, '%Y-%m-%d').date():
             
             st.markdown('**_Tomorrow_is_Holiday**.')
+            st.markdown('Streamlit is **_really_ cool**.')
             break
         
         else:
