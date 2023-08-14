@@ -18,8 +18,8 @@ time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths
             }
 def get_time_table(time_table1):
     
-    today=dt.date.today()+dt.timedelta(days=1)
-    day=today.strftime('%A')
+   # today=dt.date.today()+dt.timedelta(days=1)
+   # day=today.strftime('%A')
     result=time_table1[day]
     
     st.write(day + ' time table total',len(result),'periods.')
