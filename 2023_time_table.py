@@ -52,7 +52,7 @@ def get_time_table(time_table1):
     elif day=='Thursday':
         st.write("Kindly wear PT uniform.")
              
-    st.write("Note:-Last update 14th Aug'23.") 
+    st.write("Note:-Last update 14th Aug'23") 
 
 
 if __name__ == '__main__':
