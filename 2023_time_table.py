@@ -9,7 +9,7 @@ st.header(f"2nd B Time table for {day}")
 
 time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths'],
              'Tuesday':['P.T','Hindi','English','Lib','Maths','EVS'],
-             'Wednesday':['Computer','English','CCA','English','P.T','EVS','Maths'],
+             'Wednesday':['Computer','English','CCA','P.T','EVS','Maths'],
              'Thursday':['G.K','Maths','English','Activity','Hindi','EVS','ART'],
              'Friday':['VEDU','Hindi','Marathi','Music','Maths','P.T'],
              'Saturday':['Holiday'],
@@ -47,7 +47,9 @@ def get_time_table(time_table1):
     for sub in result:        
         if sub=='English':
             st.write("Tomorrow is english period kindly carry colors.")
-    if day=='Tuesday'or'Thursday':
+    if day=='Tuesday':
+        st.write("Kindly wear PT uniform.")
+    elif day=='Thursday':
         st.write("Kindly wear PT uniform.")
              
     st.write("Note:-Last update 14th Aug'23.") 
