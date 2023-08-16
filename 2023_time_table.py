@@ -11,6 +11,16 @@ hide_streamlit_style = """
            
             </style>
             """
+st.markdown(
+    """
+    <style>
+    .github-corner {
+        display: none !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 
 
