@@ -6,21 +6,11 @@ today=dt.date.today()+dt.timedelta(days=1)
 day=today.strftime('%A')
 hide_streamlit_style = """
             <style>
-            #MainMenu {visibility: hidden;}
+            MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
            
             </style>
             """
-st.markdown(
-    """
-    <style>
-    .stApp .css-1v5l5b6 .st-oY {
-        display: none !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 
 
