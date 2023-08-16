@@ -14,7 +14,7 @@ hide_streamlit_style = """
 st.markdown(
     """
     <style>
-    .github-corner {
+    .stApp .css-1v5l5b6 .st-oY {
         display: none !important;
     }
     </style>
