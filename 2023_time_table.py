@@ -13,8 +13,6 @@ hide_streamlit_style = """
             """
 
 
-st.markdown(hide_github_icon, unsafe_allow_html=True)
-st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 st.header(f"2nd B Time table for {day}")
 
