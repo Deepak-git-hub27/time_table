@@ -12,7 +12,7 @@ hide_streamlit_style = """
             </style>
             """
 hide_github_icon = """
-#GithubIcon {
+GithubIcon {
   visibility: hidden;
 }
 """
