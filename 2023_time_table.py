@@ -6,7 +6,7 @@ today=dt.date.today()+dt.timedelta(days=1)
 day=today.strftime('%A')
 hide_streamlit_style = """
             <style>
-            MainMenu {visibility: hidden;}
+            #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
            
             </style>
