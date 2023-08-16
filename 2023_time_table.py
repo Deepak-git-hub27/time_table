@@ -4,14 +4,14 @@ import streamlit as st
 
 today=dt.date.today()+dt.timedelta(days=1)
 day=today.strftime('%A')
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-           
-            </style>
-            """
 
+hide = """
+    <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide, unsafe_allow_html=True)
 
 
 st.header(f"2nd B Time table for {day}")
