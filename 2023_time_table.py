@@ -11,7 +11,7 @@ hide_streamlit_style = """
            
             </style>
             """
-MainMenu {
+#MainMenu {
   visibility: hidden;
 }
 
