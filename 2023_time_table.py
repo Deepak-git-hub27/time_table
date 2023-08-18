@@ -17,13 +17,11 @@ st.markdown(hide, unsafe_allow_html=True)
 st.header(f"2nd B Time table for {day}")
 
 time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths'],
-             'Tuesday':['P.T','Hindi','English','Lib','Maths','EVS'],
+             'Tuesday':['Mass P.T','Hindi','English','Lib','Maths','EVS'],
              'Wednesday':['Computer','English','CCA','P.T','EVS','Maths'],
              'Thursday':['G.K','Maths','English','Activity','Hindi','EVS','ART'],
              'Friday':['VEDU','Hindi','Marathi','Music','Maths','P.T'],
-             'Saturday':['Holiday'],
-             'Sunday':['Holiday'],
-             
+          
 
             }
 
