@@ -1,5 +1,5 @@
 import datetime as dt
-from datetime import timedelta,datetime
+from datetime import timedelta
 import streamlit as st
 
 today=dt.date.today()+dt.timedelta(days=1)
@@ -36,7 +36,7 @@ def check_holiday():
     
     for holiday in holiday_list:
         
-        if dt.date.today()+dt.timedelta(days=1)==datetime.strptime(holiday, '%Y-%m-%d').date():
+        if dt.date.today()+dt.timedelta(days=1)==dt.strptime(holiday, '%Y-%m-%d').date():
             
           
             st.markdown('**_Tomorrow is Holiday_**.')
