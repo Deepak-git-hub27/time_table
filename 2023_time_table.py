@@ -3,7 +3,7 @@ from datetime import timedelta,datetime
 import streamlit as st
 
 today=dt.date.today()+dt.timedelta(days=1)
-today = dt.date(2023, 8, 17)#check
+
 day=today.strftime('%A')
 
 hide = """
@@ -64,6 +64,8 @@ def activity_check():
         return'Sketing day.'
     elif today==second_thursday or today==fourth_thursday:
         return'Self-defense day.'
+    else:
+        return""
 
 def get_time_table(time_table1):
     
