@@ -50,15 +50,15 @@ def check_holiday():
 def activity_check():
     today=dt.date.today()+dt.timedelta(days=1)
 
-    first_day = datetime.date(dt.date.today().year,dt.date.today().month, 1)
+    first_day = dt.date(dt.date.today().year,dt.date.today().month, 1)
 
     day_offset = (3 - first_day.weekday()) % 7
-    first_thursday = first_day + datetime.timedelta(days=day_offset)
-    third_thursday = first_thursday + datetime.timedelta(weeks=2)
+    first_thursday = first_day + dt.timedelta(days=day_offset)
+    third_thursday = first_thursday + dt.timedelta(weeks=2)
 
 
-    second_thursday = first_thursday + datetime.timedelta(days=7)
-    fourth_thursday = third_thursday + datetime.timedelta(days=7)
+    second_thursday = first_thursday + dt.timedelta(days=7)
+    fourth_thursday = third_thursday + dt.timedelta(days=7)
 
     if today==first_thursday or today==third_thursday:
         return'Tomorrow is sketing day'
