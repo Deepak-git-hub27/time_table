@@ -4,7 +4,7 @@ import streamlit as st
 
 today=dt.date.today()+dt.timedelta(days=1)
 day=today.strftime('%A')
-
+today = datetime.date(2023, 8, 17)#check
 hide = """
     <style>
         #MainMenu {visibility: hidden;}
