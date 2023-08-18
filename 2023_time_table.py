@@ -61,9 +61,9 @@ def activity_check():
     fourth_thursday = third_thursday + dt.timedelta(days=7)
 
     if today==first_thursday or today==third_thursday:
-        return'Tomorrow is sketing day'
+        return'Sketing day'
     elif today==second_thursday or today==fourth_thursday:
-        return'Tomorrow is self-defense activity'
+        return'Self-defense day'
 
 def get_time_table(time_table1):
     
