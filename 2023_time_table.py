@@ -48,7 +48,7 @@ def check_holiday():
             break
 
 def activity_check():
-    today=dt.date.today()+dt.timedelta(days=1)
+    #today=dt.date.today()+dt.timedelta(days=1)
 
     first_day = dt.date(dt.date.today().year,dt.date.today().month, 1)
 
