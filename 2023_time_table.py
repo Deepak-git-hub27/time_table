@@ -3,7 +3,7 @@ from datetime import timedelta,datetime
 import streamlit as st
 
 today=dt.date.today()+dt.timedelta(days=1)
-today = dt.date(2023, 8, 18)#check
+today = dt.date(2023, 8, 20)#check
 day=today.strftime('%A')
 
 hide = """
