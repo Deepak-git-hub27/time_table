@@ -21,7 +21,8 @@ time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths
              'Wednesday':['Computer','English','CCA','P.T','EVS','Maths'],
              'Thursday':['G.K','Maths','English','Activity','Hindi','EVS','ART'],
              'Friday':['VEDU','Hindi','Marathi','Music','Maths','P.T'],
-          
+             'Saturday':[],
+             'Sunday':[]
 
             }
 
