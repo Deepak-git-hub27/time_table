@@ -49,7 +49,7 @@ def get_time_table(time_table1):
     
 
     result=time_table1[day]
-    if result>=2:
+    if len(result)>=2:
         st.write('Total',str(len(result)),'periods.')
     else:
            st.write('Tomorrow is holiday')
