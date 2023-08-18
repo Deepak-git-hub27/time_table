@@ -49,9 +49,10 @@ def get_time_table(time_table1):
     
 
     result=time_table1[day]
-    
-    st.write('Total',str(len(result)),'periods.')
-   
+    if result>=2:
+        st.write('Total',str(len(result)),'periods.')
+    else:
+           st.write('Tomorrow is holiday')
     st.table(result)  
     for sub in result:        
         if sub=='English':
