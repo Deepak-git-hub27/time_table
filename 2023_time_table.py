@@ -109,6 +109,12 @@ def askme():
         elif prompt in 'Friday':
             st.write('Time table for Friday')
             st.table(time_table['Friday'])
+        elif prompt in 'Saturday':
+            st.write('It's Holiday')
+        elif prompt in 'Sunday':
+            st.write('It's Holiday')
+          
+        
         else:
             st.write('You written wrong day name')
            
