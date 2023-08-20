@@ -111,7 +111,7 @@ def askme():
             st.table(time_table['Friday'])
         else:
             st.write('You written wrong day name')
-
+           
 if __name__ == '__main__':
     
     check_holiday()
