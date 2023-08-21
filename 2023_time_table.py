@@ -119,7 +119,7 @@ def askme():
             st.write('You written wrong day name')
            
 if __name__ == '__main__':
-    with col1:
+    with col2:
         check_holiday()
     with col2:
         askme()
