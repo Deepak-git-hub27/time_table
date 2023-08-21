@@ -1,6 +1,7 @@
 import datetime as dt
 from datetime import timedelta,datetime
 import streamlit as st
+container = st.container()
 col1, col2,col3= st.columns(3)
 today=dt.date.today()+dt.timedelta(days=1)
 
@@ -95,8 +96,8 @@ def askme():
         if prompt:
             prompt=prompt.title()
             if prompt in 'Monday':
-                st.write('Time table for Monday') 
-                st.table(time_table['Monday'])
+                container.write('Time table for Monday') 
+                container.table(time_table['Monday'])
             elif prompt in 'Tuesday':
                 st.write('Time table for Tuesday')
                 st.table(time_table['Tuesday'])
