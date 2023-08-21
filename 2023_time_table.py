@@ -1,8 +1,7 @@
 import datetime as dt
 from datetime import timedelta,datetime
 import streamlit as st
-container = st.container()
-col1, col2,col3= st.columns(3)
+
 today=dt.date.today()+dt.timedelta(days=1)
 
 day=today.strftime('%A')
@@ -88,7 +87,7 @@ def get_time_table(time_table1):
         st.write("Note:-Last update 14th Aug'23") 
 
 def askme():
-    with st.container():  
+
         st.title("Ask Me")
 
         prompt = st.chat_input("Which day's timetable do you need?")
@@ -96,8 +95,8 @@ def askme():
         if prompt:
             prompt=prompt.title()
             if prompt in 'Monday':
-                container.write('Time table for Monday') 
-                container.table(time_table['Monday'])
+                st.write('Time table for Monday') 
+                st.table(time_table['Monday'])
             elif prompt in 'Tuesday':
                 st.write('Time table for Tuesday')
                 st.table(time_table['Tuesday'])
