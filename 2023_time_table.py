@@ -1,6 +1,7 @@
 import datetime as dt
 from datetime import timedelta,datetime
 import streamlit as st
+choice=st.sidebar.radio(label='2nd B Time Table',options=("Tomorrow's Time Table",'Ask me about time table'))
 
 
 today=dt.date.today()+dt.timedelta(days=1)
@@ -121,8 +122,11 @@ def askme():
            
 if __name__ == '__main__':
 
-        check_holiday()
-
+    if choice=="Tomorrow's Time Table"
+            check_holiday()
+    if choice=="Ask me about time table"
         askme()
+    
+    
 
    
