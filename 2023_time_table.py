@@ -1,7 +1,15 @@
 import datetime as dt
 from datetime import timedelta,datetime
 import streamlit as st
-col1, col2 = st.columns(2)
+
+with st.sidebar:
+    with st.echo():
+        st.write("This code will be printed to the sidebar.")
+
+    with st.spinner("Loading..."):
+        time.sleep(5)
+    st.success("Done!")
+    
 today=dt.date.today()+dt.timedelta(days=1)
 
 day=today.strftime('%A')
