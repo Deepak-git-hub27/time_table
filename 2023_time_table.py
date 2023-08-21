@@ -17,7 +17,7 @@ hide = """
 st.markdown(hide, unsafe_allow_html=True)
 
 
-st.header(f"2nd B Time table for {day}")
+
 
 time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths'],
              'Tuesday':['Mass P.T','Hindi','English','Lib','Maths','EVS'],
@@ -70,7 +70,7 @@ def activity_check():
 
 def get_time_table(time_table1):
         
-
+        st.header(f"2nd B Time table for {day}")
         result=time_table1[day]
         if len(result)>=2:
             st.write('Total',str(len(result)),'periods.')
@@ -88,8 +88,6 @@ def get_time_table(time_table1):
         st.write("Note:-Last update 14th Aug'23") 
 
 def askme():
-
-        st.title("Ask Me")
 
         prompt = st.chat_input("Which day's timetable do you need?")
 
