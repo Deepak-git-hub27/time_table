@@ -119,7 +119,7 @@ def askme():
             st.write('You written wrong day name')
            
 if __name__ == '__main__':
-    
+    with st.container():
         check_holiday()
 
-        askme()
+    askme()
