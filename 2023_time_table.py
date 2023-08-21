@@ -1,8 +1,6 @@
 import datetime as dt
 from datetime import timedelta,datetime
 import streamlit as st
-with st.sidebar:
-    st.radio("2nd B Time Table","Tommorws's Time Table", "Ask me")
 
 
 today=dt.date.today()+dt.timedelta(days=1)
