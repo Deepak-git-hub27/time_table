@@ -2,7 +2,8 @@ import datetime as dt
 from datetime import timedelta,datetime
 import streamlit as st
 
-st.sidebar.['test']
+choice=st.sidebar.radio(label='Choose',options=('test1','test2')
+
 today=dt.date.today()+dt.timedelta(days=1)
 
 day=today.strftime('%A')
