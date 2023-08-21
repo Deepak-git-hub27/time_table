@@ -4,10 +4,9 @@ import streamlit as st
 
 with st.sidebar:
     add_radio = st.radio(
-        "Choose a shipping method",
+        "2nd B Time Table",
         "Tommorws's Time Table", "Ask me")
-    )
-    
+
 today=dt.date.today()+dt.timedelta(days=1)
 
 day=today.strftime('%A')
