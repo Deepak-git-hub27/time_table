@@ -69,22 +69,22 @@ def activity_check():
 
 def get_time_table(time_table1):
     
-
-    result=time_table1[day]
-    if len(result)>=2:
-        st.write('Total',str(len(result)),'periods.')
-    else:
-           st.write('Tomorrow is holiday')
-    st.table(result)  
-    for sub in result:        
-        if sub=='English':
-            st.write("Tomorrow is english period kindly carry colors.")
-    if day=='Tuesday':
-        st.write("Kindly wear PT uniform.")
-    elif day=='Thursday':
-        st.write(f"Kindly wear PT uniform  {activity_check()}")
-             
-    st.write("Note:-Last update 14th Aug'23") 
+    with st.container():
+        result=time_table1[day]
+        if len(result)>=2:
+            st.write('Total',str(len(result)),'periods.')
+        else:
+               st.write('Tomorrow is holiday')
+        st.table(result)  
+        for sub in result:        
+            if sub=='English':
+                st.write("Tomorrow is english period kindly carry colors.")
+        if day=='Tuesday':
+            st.write("Kindly wear PT uniform.")
+        elif day=='Thursday':
+            st.write(f"Kindly wear PT uniform  {activity_check()}")
+                 
+        st.write("Note:-Last update 14th Aug'23") 
 
 def askme():
     st.title("Ask Me")
@@ -119,7 +119,7 @@ def askme():
             st.write('You written wrong day name')
            
 if __name__ == '__main__':
-    with st.container():
+    
         check_holiday()
 
     askme()
