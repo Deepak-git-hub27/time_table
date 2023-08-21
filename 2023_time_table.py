@@ -19,7 +19,7 @@ st.markdown(hide, unsafe_allow_html=True)
 
 
 time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths'],
-             'Tuesday':['Mass P.T','Hindi','English','Lib','Maths','EVS'],
+             'Tuesday':['Mass P.T','Hindi','English','Library','Maths','EVS'],
              'Wednesday':['Computer','English','CCA','P.T','EVS','Maths'],
              'Thursday':['G.K','Maths','English','Activity','Hindi','EVS','ART'],
              'Friday':['VEDU','Hindi','Marathi','Music','Maths','P.T'],
