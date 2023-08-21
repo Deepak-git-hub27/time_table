@@ -87,7 +87,7 @@ def get_time_table(time_table1):
         st.write("Note:-Last update 14th Aug'23") 
 
 def askme():
-
+        st.title('Ask me')
         prompt = st.chat_input("Which day's timetable do you need?")
 
         if prompt:
