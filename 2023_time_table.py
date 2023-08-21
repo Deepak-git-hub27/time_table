@@ -1,6 +1,10 @@
 import datetime as dt
 from datetime import timedelta,datetime
 import streamlit as st
+with st.sidebar:
+    add_radio = st.radio(
+        "2nd B Time Table",
+        "Tommorws's Time Table", "Ask me")
 
 
 today=dt.date.today()+dt.timedelta(days=1)
@@ -120,9 +124,9 @@ def askme():
                 st.write('You written wrong day name')
            
 if __name__ == '__main__':
-    with col1:
+
         check_holiday()
-    with col2:
+
         askme()
 
    
