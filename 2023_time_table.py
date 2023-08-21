@@ -122,9 +122,9 @@ def askme():
            
 if __name__ == '__main__':
 
-    if choice=="Tomorrow's Time Table"
+    if choice=="Tomorrow's Time Table":
             check_holiday()
-    if choice=="Ask me about time table"
+    if choice=="Ask me about time table":
         askme()
     
     
