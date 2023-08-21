@@ -2,7 +2,7 @@ import datetime as dt
 from datetime import timedelta,datetime
 import streamlit as st
 
-
+st.sidebar.[element_name]
 today=dt.date.today()+dt.timedelta(days=1)
 
 day=today.strftime('%A')
