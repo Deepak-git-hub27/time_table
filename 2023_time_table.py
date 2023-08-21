@@ -68,8 +68,8 @@ def activity_check():
         return""
 
 def get_time_table(time_table1):
-    
-    with st.container():
+        
+
         result=time_table1[day]
         if len(result)>=2:
             st.write('Total',str(len(result)),'periods.')
@@ -87,36 +87,37 @@ def get_time_table(time_table1):
         st.write("Note:-Last update 14th Aug'23") 
 
 def askme():
-    st.title("Ask Me")
+    with st.container():  
+        st.title("Ask Me")
 
-    prompt = st.chat_input("Which day's timetable do you need?")
+        prompt = st.chat_input("Which day's timetable do you need?")
 
-    if prompt:
-        prompt=prompt.title()
-        if prompt in 'Monday':
-            st.write('Time table for Monday') 
-            st.table(time_table['Monday'])
-        elif prompt in 'Tuesday':
-            st.write('Time table for Tuesday')
-            st.table(time_table['Tuesday'])
-        elif prompt in 'Wednesday':
-            st.write('Time table for Wednesday')
-            st.table(time_table['Wednesday'])    
-
-        elif prompt in 'Thursday':
-            st.write('Time table for Thursday')
-            st.table(time_table['Thursday'])
-        elif prompt in 'Friday':
-            st.write('Time table for Friday')
-            st.table(time_table['Friday'])
-        elif prompt in 'Saturday':
-            st.write("It's Holiday")
-        elif prompt in 'Sunday':
-            st.write("It's Holiday")
-          
-        
-        else:
-            st.write('You written wrong day name')
+        if prompt:
+            prompt=prompt.title()
+            if prompt in 'Monday':
+                st.write('Time table for Monday') 
+                st.table(time_table['Monday'])
+            elif prompt in 'Tuesday':
+                st.write('Time table for Tuesday')
+                st.table(time_table['Tuesday'])
+            elif prompt in 'Wednesday':
+                st.write('Time table for Wednesday')
+                st.table(time_table['Wednesday'])    
+    
+            elif prompt in 'Thursday':
+                st.write('Time table for Thursday')
+                st.table(time_table['Thursday'])
+            elif prompt in 'Friday':
+                st.write('Time table for Friday')
+                st.table(time_table['Friday'])
+            elif prompt in 'Saturday':
+                st.write("It's Holiday")
+            elif prompt in 'Sunday':
+                st.write("It's Holiday")
+              
+            
+            else:
+                st.write('You written wrong day name')
            
 if __name__ == '__main__':
     
