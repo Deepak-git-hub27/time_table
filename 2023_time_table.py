@@ -14,8 +14,8 @@ hide = """
 """
 st.markdown(hide, unsafe_allow_html=True)
 
-with col1:
-    st.header(f"2nd B Time table for {day}")
+
+st.header(f"2nd B Time table for {day}")
 
 time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths'],
              'Tuesday':['Mass P.T','Hindi','English','Lib','Maths','EVS'],
@@ -119,7 +119,7 @@ def askme():
             st.write('You written wrong day name')
            
 if __name__ == '__main__':
-    with col2:
+    
         check_holiday()
-    with col2:
+
         askme()
