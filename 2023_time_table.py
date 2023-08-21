@@ -2,10 +2,11 @@ import datetime as dt
 from datetime import timedelta,datetime
 import streamlit as st
 
-add_selectbox = st.sidebar.selectbox(
-    "How would you like to be contacted?",
-    ("Email", "Home phone", "Mobile phone")
-)
+with st.sidebar:
+    add_radio = st.radio(
+        "Choose a shipping method",
+        "Tommorws's Time Table", "Ask me")
+    )
     
 today=dt.date.today()+dt.timedelta(days=1)
 
