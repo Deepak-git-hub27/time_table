@@ -1,7 +1,7 @@
 import datetime as dt
 from datetime import timedelta,datetime
 import streamlit as st
-col1, col2= st.columns(2)
+col1, col2,col3= st.columns(3)
 today=dt.date.today()+dt.timedelta(days=1)
 
 day=today.strftime('%A')
@@ -14,8 +14,8 @@ hide = """
 """
 st.markdown(hide, unsafe_allow_html=True)
 
-
-st.header(f"2nd B Time table for {day}")
+with col1:
+    st.header(f"2nd B Time table for {day}")
 
 time_table= {'Monday':['Computer','Hindi','CCA','English','Marathi','EVS','Maths'],
              'Tuesday':['Mass P.T','Hindi','English','Lib','Maths','EVS'],
