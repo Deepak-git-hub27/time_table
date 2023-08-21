@@ -2,13 +2,10 @@ import datetime as dt
 from datetime import timedelta,datetime
 import streamlit as st
 
-with st.sidebar:
-    with st.echo():
-        st.write("This code will be printed to the sidebar.")
-
-    with st.spinner("Loading..."):
-        time.sleep(5)
-    st.success("Done!")
+add_selectbox = st.sidebar.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone")
+)
     
 today=dt.date.today()+dt.timedelta(days=1)
 
