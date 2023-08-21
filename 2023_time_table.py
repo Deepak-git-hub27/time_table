@@ -85,8 +85,9 @@ def get_time_table(time_table1):
             st.write(f"Kindly wear PT uniform  {activity_check()}")
                  
         st.write("Note:-Last update 14th Aug'23") 
-st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
+
 def askme():
+        st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)    
         st.subheader('Ask me')
         prompt = st.chat_input("Which day's timetable do you need?")
 
@@ -116,7 +117,8 @@ def askme():
             
             else:
                 st.write('You written wrong day name')
-st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)           
+            st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)    
+       
 if __name__ == '__main__':
     check_holiday()
     askme()
