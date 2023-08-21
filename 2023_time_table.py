@@ -1,7 +1,7 @@
 import datetime as dt
 from datetime import timedelta,datetime
 import streamlit as st
-
+col1, col2= st.columns(2)
 today=dt.date.today()+dt.timedelta(days=1)
 
 day=today.strftime('%A')
@@ -89,7 +89,7 @@ def get_time_table(time_table1):
 def askme():
     st.title("Ask Me")
 
-    prompt = st.chat_input("Which day time table you need?")
+    prompt = st.chat_input("Which day's timetable do you need?")
 
     if prompt:
         prompt=prompt.title()
@@ -119,6 +119,7 @@ def askme():
             st.write('You written wrong day name')
            
 if __name__ == '__main__':
-    
-    check_holiday()
-    askme()
+    with col1:
+        check_holiday()
+    with col2:
+        askme()
