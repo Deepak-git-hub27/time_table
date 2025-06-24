@@ -422,7 +422,7 @@ def main():
     st.sidebar.markdown(f"📚 **Tomorrow:** {len(tomorrow_subjects)} periods")
     
     # Display selected page
-    if page == "📅 Today's Schedule":
+    if page == "📅 Tomorrow's Schedule":
         display_timetable()
     elif page == "🎒 Bag Organizer":
         display_bag_organizer()
