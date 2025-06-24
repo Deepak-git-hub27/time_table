@@ -12,29 +12,40 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for modern styling with dark/light theme compatibility
+# Custom CSS for mobile-optimized styling with dark/light theme compatibility
 st.markdown("""
 <style>
-    /* Dark/Light theme compatible styles */
+    /* Mobile-first design with compact cards */
     .main-header {
         background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-        padding: 2rem;
-        border-radius: 10px;
+        padding: 1rem;
+        border-radius: 8px;
         text-align: center;
         color: white;
-        margin-bottom: 2rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .main-header h1 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .main-header p {
+        font-size: 0.9rem;
+        margin: 0;
     }
     
     .card {
         background: rgba(255, 255, 255, 0.95);
         color: #333;
-        padding: 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        margin: 1rem 0;
-        border: 2px solid #667eea;
+        padding: 0.8rem;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        margin: 0.5rem 0;
+        border: 1px solid #667eea;
         backdrop-filter: blur(10px);
+        font-size: 0.9rem;
     }
     
     /* Dark theme support */
@@ -42,18 +53,19 @@ st.markdown("""
     .stApp[data-theme="dark"] .card {
         background: rgba(50, 50, 50, 0.95);
         color: #ffffff;
-        border: 2px solid #8a9bff;
+        border: 1px solid #8a9bff;
     }
     
     .subject-card {
         background: rgba(245, 247, 250, 0.95);
         color: #2c3e50;
-        padding: 1rem;
-        border-radius: 8px;
-        margin: 0.5rem 0;
-        border: 2px solid #4CAF50;
+        padding: 0.6rem;
+        border-radius: 6px;
+        margin: 0.3rem 0;
+        border: 1px solid #4CAF50;
         font-weight: 500;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        font-size: 0.85rem;
     }
     
     /* Dark theme for subject cards */
@@ -61,30 +73,37 @@ st.markdown("""
     .stApp[data-theme="dark"] .subject-card {
         background: rgba(70, 70, 70, 0.95);
         color: #ffffff;
-        border: 2px solid #66bb6a;
+        border: 1px solid #66bb6a;
     }
     
     .holiday-card {
         background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
-        padding: 1.5rem;
-        border-radius: 10px;
+        padding: 1rem;
+        border-radius: 8px;
         text-align: center;
         color: #2d3436;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        border: 2px solid #fdcb6e;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        border: 1px solid #fdcb6e;
+        margin: 0.5rem 0;
+    }
+    
+    .holiday-card h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
     }
     
     .bag-item {
         background: rgba(232, 245, 232, 0.95);
         color: #2e7d32;
-        padding: 0.8rem 1rem;
-        border-radius: 8px;
-        margin: 0.3rem 0;
+        padding: 0.5rem 0.7rem;
+        border-radius: 6px;
+        margin: 0.2rem 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
         border: 1px solid #4caf50;
         font-weight: 500;
+        font-size: 0.85rem;
     }
     
     /* Dark theme for bag items */
@@ -98,14 +117,15 @@ st.markdown("""
     .bag-item-missing {
         background: rgba(255, 232, 232, 0.95);
         color: #c62828;
-        padding: 0.8rem 1rem;
-        border-radius: 8px;
-        margin: 0.3rem 0;
+        padding: 0.5rem 0.7rem;
+        border-radius: 6px;
+        margin: 0.2rem 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
         border: 1px solid #f44336;
         font-weight: 500;
+        font-size: 0.85rem;
     }
     
     /* Dark theme for missing items */
@@ -119,20 +139,31 @@ st.markdown("""
     .stats-container {
         display: flex;
         justify-content: space-around;
-        margin: 1rem 0;
-        gap: 1rem;
+        margin: 0.5rem 0;
+        gap: 0.5rem;
     }
     
     .stat-box {
         background: rgba(168, 237, 234, 0.9);
         color: #006064;
-        padding: 1.5rem;
-        border-radius: 12px;
+        padding: 0.8rem;
+        border-radius: 8px;
         text-align: center;
-        min-width: 120px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        border: 2px solid #4dd0e1;
+        min-width: 70px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid #4dd0e1;
         font-weight: bold;
+        font-size: 0.8rem;
+    }
+    
+    .stat-box h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .stat-box p {
+        font-size: 0.7rem;
+        margin: 0;
     }
     
     /* Dark theme for stat boxes */
@@ -140,29 +171,30 @@ st.markdown("""
     .stApp[data-theme="dark"] .stat-box {
         background: rgba(0, 96, 100, 0.4);
         color: #b2ebf2;
-        border: 2px solid #26c6da;
+        border: 1px solid #26c6da;
     }
     
     .activity-badge {
         background: #ff6b6b;
         color: white;
-        padding: 0.4rem 1rem;
-        border-radius: 25px;
-        font-size: 0.8rem;
-        margin-left: 0.8rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 15px;
+        font-size: 0.7rem;
+        margin-left: 0.5rem;
         font-weight: bold;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
     
     .uniform-alert {
         background: rgba(255, 243, 205, 0.95);
         color: #e65100;
-        border: 2px solid #ffc107;
-        padding: 1.2rem;
-        border-radius: 10px;
-        margin: 1rem 0;
+        border: 1px solid #ffc107;
+        padding: 0.8rem;
+        border-radius: 6px;
+        margin: 0.5rem 0;
         font-weight: 500;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        font-size: 0.85rem;
     }
     
     /* Dark theme for uniform alert */
@@ -170,70 +202,223 @@ st.markdown("""
     .stApp[data-theme="dark"] .uniform-alert {
         background: rgba(255, 193, 7, 0.2);
         color: #fff3e0;
-        border: 2px solid #ffb300;
+        border: 1px solid #ffb300;
     }
     
-    /* Additional mobile-friendly styles */
+    /* Mobile-first responsive design */
     @media (max-width: 768px) {
         .main-header {
-            padding: 1.5rem;
+            padding: 0.8rem;
         }
         
         .main-header h1 {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .main-header p {
+            font-size: 0.8rem;
         }
         
         .subject-card, .bag-item, .bag-item-missing {
-            padding: 0.8rem;
-            margin: 0.4rem 0;
+            padding: 0.5rem;
+            margin: 0.2rem 0;
+            font-size: 0.8rem;
+        }
+        
+        .card {
+            padding: 0.6rem;
+            font-size: 0.85rem;
         }
         
         .stat-box {
-            padding: 1rem;
-            min-width: 100px;
+            padding: 0.6rem;
+            min-width: 60px;
+            font-size: 0.75rem;
+        }
+        
+        .stat-box h3 {
+            font-size: 1rem;
+        }
+        
+        .stat-box p {
+            font-size: 0.65rem;
         }
         
         .stats-container {
-            flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.3rem;
+        }
+        
+        .activity-badge {
+            padding: 0.15rem 0.4rem;
+            font-size: 0.65rem;
+            margin-left: 0.3rem;
+        }
+        
+        .uniform-alert {
+            padding: 0.6rem;
+            font-size: 0.8rem;
+        }
+        
+        .holiday-card {
+            padding: 0.8rem;
+        }
+        
+        .holiday-card h2 {
+            font-size: 1.1rem;
+        }
+        
+        .holiday-card p {
+            font-size: 0.85rem;
         }
     }
     
-    /* Ensure text is always readable */
+    /* Extra small screens (phones in portrait) */
+    @media (max-width: 480px) {
+        .main-header h1 {
+            font-size: 1rem;
+        }
+        
+        .main-header p {
+            font-size: 0.75rem;
+        }
+        
+        .subject-card, .bag-item, .bag-item-missing {
+            padding: 0.4rem;
+            font-size: 0.75rem;
+        }
+        
+        .card {
+            padding: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        .stat-box {
+            padding: 0.5rem;
+            min-width: 55px;
+            font-size: 0.7rem;
+        }
+        
+        .stat-box h3 {
+            font-size: 0.9rem;
+        }
+        
+        .stat-box p {
+            font-size: 0.6rem;
+        }
+        
+        .activity-badge {
+            padding: 0.1rem 0.3rem;
+            font-size: 0.6rem;
+        }
+        
+        .uniform-alert {
+            padding: 0.5rem;
+            font-size: 0.75rem;
+        }
+        
+        .holiday-card h2 {
+            font-size: 1rem;
+        }
+        
+        .holiday-card p {
+            font-size: 0.8rem;
+        }
+    }
+    
+    /* Ensure text is always readable with mobile optimization */
     .card h3, .card h4, .card p {
         color: inherit;
+        margin: 0.3rem 0;
+    }
+    
+    .card h4 {
+        font-size: 0.95rem;
     }
     
     /* Better contrast for dark backgrounds */
     [data-theme="dark"] .main-header,
     .stApp[data-theme="dark"] .main-header {
-        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
     }
     
-    /* Make sure buttons work well in both themes */
+    /* Mobile-optimized buttons */
     .stButton > button {
-        border-radius: 8px;
+        border-radius: 6px;
         font-weight: 500;
         transition: all 0.3s ease;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
     }
     
-    /* Custom scrollbar for better visibility */
+    /* Compact sidebar for mobile */
+    .css-1d391kg {
+        padding: 0.5rem;
+    }
+    
+    /* Mobile-optimized selectbox and inputs */
+    .stSelectbox > div > div {
+        font-size: 0.85rem;
+    }
+    
+    .stTextInput > div > div > input {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+    
+    /* Compact dataframe for mobile */
+    .dataframe {
+        font-size: 0.8rem;
+    }
+    
+    /* Mobile-optimized radio buttons */
+    .stRadio > div {
+        font-size: 0.85rem;
+    }
+    
+    /* Compact info/success/warning messages */
+    .stAlert {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Custom scrollbar - thinner for mobile */
     ::-webkit-scrollbar {
-        width: 8px;
+        width: 4px;
     }
     
     ::-webkit-scrollbar-track {
         background: rgba(0, 0, 0, 0.1);
-        border-radius: 4px;
+        border-radius: 2px;
     }
     
     ::-webkit-scrollbar-thumb {
         background: rgba(102, 126, 234, 0.6);
-        border-radius: 4px;
+        border-radius: 2px;
     }
     
     ::-webkit-scrollbar-thumb:hover {
         background: rgba(102, 126, 234, 0.8);
+    }
+    
+    /* Compact footer */
+    .footer-text {
+        font-size: 0.75rem;
+        color: #666;
+    }
+    
+    /* Remove excessive margins on mobile */
+    @media (max-width: 768px) {
+        .block-container {
+            padding: 0.5rem;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .stMarkdown {
+            margin-bottom: 0.3rem;
+        }
     }
 </style>
 """, unsafe_allow_html=True)
@@ -570,8 +755,8 @@ def main():
     # Footer
     st.markdown("---")
     st.markdown("""
-    <div style="text-align: center; color: #666; margin-top: 2rem;">
-        <p>📚 Smart School Organizer - Class 4B | Last Updated: June 24, 2025</p>
+    <div style="text-align: center; margin-top: 1rem;" class="footer-text">
+        <p>📚 Smart School Organizer - Class 4B</p>
         <p>Made with ❤️ for smart students</p>
     </div>
     """, unsafe_allow_html=True)
