@@ -166,7 +166,7 @@ def get_subjects_for_day(day):
 def display_main_header():
     st.markdown("""
     <div class="main-header">
-        <h1>📚 Smart School Organizer - Class 4B</h1>
+        <h1>📚 Smart School Bag Organizer - Class 4B</h1>
         <p>Your intelligent timetable and bag packing assistant</p>
     </div>
     """, unsafe_allow_html=True)
@@ -413,7 +413,7 @@ def main():
     # Display current date and time
     st.sidebar.markdown("---")
     st.sidebar.markdown(f"📅 **Today:** {dt.date.today().strftime('%A, %B %d, %Y')}")
-    st.sidebar.markdown(f"🕐 **Time:** {dt.datetime.now().strftime('%I:%M %p')}")
+    st.sidebar.markdown(f"🕐 **Time:** {dt.datetime.now()+ timedelta(hours=5, minutes=30).strftime('%I:%M %p')}")
     
     # Quick stats
     tomorrow, day_name = get_tomorrow_info()
