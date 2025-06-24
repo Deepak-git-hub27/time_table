@@ -413,7 +413,7 @@ def main():
     # Display current date and time
     st.sidebar.markdown("---")
     st.sidebar.markdown(f"📅 **Today:** {dt.date.today().strftime('%A, %B %d, %Y')}")
-    st.sidebar.markdown(f"🕐 **Time:** {dt.datetime.now()+ timedelta(hours=5, minutes=30).strftime('%I:%M %p')}")
+    st.sidebar.markdown(f"🕐 **Time:** {dt.datetime.now()+ timedelta(hours=5, minutes=30)).strftime('%I:%M %p')}")
     
     # Quick stats
     tomorrow, day_name = get_tomorrow_info()
