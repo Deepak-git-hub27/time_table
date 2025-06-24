@@ -407,7 +407,7 @@ def main():
     st.sidebar.title("🧭 Navigation")
     page = st.sidebar.radio(
         "Go to:",
-        ["📅 Today's Schedule", "🎒 Bag Organizer", "📊 Weekly View", "🤔 Ask Me"]
+        ["📅 Tomorrow's Schedule", "🎒 Bag Organizer", "📊 Weekly View", "🤔 Ask Me"]
     )
     
     # Display current date and time
