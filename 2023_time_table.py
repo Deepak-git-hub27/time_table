@@ -20,12 +20,12 @@ st.markdown("""
         padding: 2rem;
         border-radius: 10px;
         text-align: center;
-        color: white;
+        color: black;
         margin-bottom: 2rem;
     }
     
     .card {
-        background: white;
+        background: black;
         padding: 1.5rem;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -85,7 +85,7 @@ st.markdown("""
     
     .activity-badge {
         background: #ff6b6b;
-        color: white;
+        color: black;
         padding: 0.3rem 0.8rem;
         border-radius: 20px;
         font-size: 0.8rem;
