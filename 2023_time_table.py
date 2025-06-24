@@ -119,7 +119,17 @@ time_table = {
     'Sunday': []
 }
 
-# Subject to books/items mapping
+# Common school items that students might need
+common_school_items = [
+    'Math Book', 'English Book', 'Hindi Book', 'Marathi Book', 'EVS Book', 'Computer Book',
+    'GK Book', 'Art Book', 'Music Book', 'Value Education Book', 'Logic Book',
+    'Math Notebook', 'English Notebook', 'Hindi Notebook', 'Marathi Notebook', 'EVS Notebook',
+    'Computer Notebook', 'GK Notebook', 'Art Notebook', 'Music Notebook', 'General Notebook',
+    'Pencil Box', 'Water Bottle', 'Tiffin Box', 'Geometry Box', 'Calculator',
+    'Color Pencils', 'Sketch Pens', 'Crayons', 'Eraser', 'Sharpener', 'Scale',
+    'Library Card', 'ID Card', 'Homework Diary', 'Time Table', 'Towel',
+    'PT Uniform', 'Sports Shoes', 'Dance Shoes', 'Skating Shoes'
+]
 
 holiday_list = [
     '2024-08-15', '2024-08-29', '2024-08-30', '2024-09-07', '2024-09-19',
@@ -150,15 +160,8 @@ def get_thursday_activity(date):
         return 'Self-Defense Day'
     return ''
 
-def get_required_items(day):
-    subjects = time_table.get(day, [])
-    required_items = set()
-    
-    #for subject in subjects:
-     #   if subject in subject_items:
-      #      required_items.update(subject_items[subject])
-    
-    #return list(required_items)
+def get_subjects_for_day(day):
+    return time_table.get(day, [])
 
 def display_main_header():
     st.markdown("""
@@ -252,82 +255,99 @@ def display_bag_organizer():
         st.info("No need to pack bag - tomorrow is a holiday! 🎉")
         return
     
-    required_items = get_required_items(day_name)
+    tomorrow_subjects = get_subjects_for_day(day_name)
     
     col1, col2 = st.columns(2)
     
     with col1:
-        st.subheader("📋 Required Items")
+        st.subheader("📚 Tomorrow's Subjects")
         
-        # Add items to bag
-        st.write("**Add items to your bag:**")
-        for item in required_items:
-            if st.button(f"➕ {item}", key=f"add_{item}"):
-                if item not in st.session_state.bag_items:
-                    st.session_state.bag_items.append(item)
-                    st.success(f"Added {item} to bag!")
-                    st.rerun()
-        
-        # Show missing items
-        missing_items = [item for item in required_items if item not in st.session_state.bag_items]
-        if missing_items:
-            st.write("**⚠️ Missing Items:**")
-            for item in missing_items:
+        # Display tomorrow's subjects
+        if tomorrow_subjects:
+            for i, subject in enumerate(tomorrow_subjects, 1):
                 st.markdown(f"""
-                <div class="bag-item-missing">
-                    <span>❌ {item}</span>
+                <div class="subject-card">
+                    <strong>Period {i}:</strong> {subject}
                 </div>
                 """, unsafe_allow_html=True)
+        
+        st.markdown("---")
+        st.subheader("➕ Add Items to Bag")
+        
+        # Add items to bag using selectbox or multiselect
+        available_items = [item for item in common_school_items if item not in st.session_state.bag_items]
+        
+        if available_items:
+            selected_item = st.selectbox("Choose an item to add:", ["Select an item..."] + available_items)
+            
+            if selected_item != "Select an item..." and st.button("Add to Bag"):
+                st.session_state.bag_items.append(selected_item)
+                st.success(f"Added {selected_item} to bag!")
+                st.rerun()
+        else:
+            st.info("All common items are already in your bag!")
+        
+        # Quick add buttons for common daily items
+        st.write("**Quick Add:**")
+        quick_items = ['Water Bottle', 'Tiffin Box', 'Pencil Box', 'Homework Diary', 'ID Card']
+        
+        cols = st.columns(3)
+        for i, item in enumerate(quick_items):
+            with cols[i % 3]:
+                if item not in st.session_state.bag_items:
+                    if st.button(f"➕ {item}", key=f"quick_{item}"):
+                        st.session_state.bag_items.append(item)
+                        st.success(f"Added {item}!")
+                        st.rerun()
     
     with col2:
-        st.subheader("✅ Items in Bag")
+        st.subheader("🎒 Items in Your Bag")
         
         if st.session_state.bag_items:
             for item in st.session_state.bag_items:
-                col_item, col_btn = st.columns([3, 1])
+                col_item, col_btn = st.columns([4, 1])
                 with col_item:
-                    is_required = item in required_items
-                    icon = "✅" if is_required else "⚠️"
                     st.markdown(f"""
                     <div class="bag-item">
-                        <span>{icon} {item}</span>
+                        <span>✅ {item}</span>
                     </div>
                     """, unsafe_allow_html=True)
                 
                 with col_btn:
                     if st.button("🗑️", key=f"remove_{item}"):
                         st.session_state.bag_items.remove(item)
+                        st.success(f"Removed {item}")
                         st.rerun()
         else:
             st.info("Your bag is empty. Start adding items!")
         
         # Bag status
-        if required_items:
-            packed_required = len([item for item in required_items if item in st.session_state.bag_items])
-            completion_rate = (packed_required / len(required_items)) * 100
-            
-            st.markdown(f"""
-            <div class="card">
-                <h4>📊 Bag Status</h4>
-                <p><strong>Completion:</strong> {completion_rate:.0f}%</p>
-                <p><strong>Required Items:</strong> {len(required_items)}</p>
-                <p><strong>Packed Items:</strong> {packed_required}</p>
-                <p><strong>Total in Bag:</strong> {len(st.session_state.bag_items)}</p>
-            </div>
-            """, unsafe_allow_html=True)
-            
-            # Progress bar
-            st.progress(completion_rate / 100)
-            
-            if completion_rate == 100:
-                st.success("🎉 Your bag is perfectly packed for tomorrow!")
-                st.balloons()
+        st.markdown(f"""
+        <div class="card">
+            <h4>📊 Bag Status</h4>
+            <p><strong>Total Items in Bag:</strong> {len(st.session_state.bag_items)}</p>
+            <p><strong>Subjects Tomorrow:</strong> {len(tomorrow_subjects)}</p>
+        </div>
+        """, unsafe_allow_html=True)
         
         # Clear bag button
         if st.session_state.bag_items:
-            if st.button("🗑️ Clear Bag", type="secondary"):
+            if st.button("🗑️ Clear Entire Bag", type="secondary"):
                 st.session_state.bag_items = []
+                st.success("Bag cleared!")
                 st.rerun()
+        
+        # Custom item input
+        st.markdown("---")
+        st.write("**Add Custom Item:**")
+        custom_item = st.text_input("Enter item name:", placeholder="e.g., Special notebook")
+        if custom_item and st.button("Add Custom Item"):
+            if custom_item not in st.session_state.bag_items:
+                st.session_state.bag_items.append(custom_item)
+                st.success(f"Added {custom_item} to bag!")
+                st.rerun()
+            else:
+                st.warning("Item already in bag!")
 
 def display_weekly_view():
     st.header("📊 Weekly Overview")
@@ -375,12 +395,6 @@ def display_query_interface():
                     df = pd.DataFrame(periods_data)
                     st.table(df)
                     
-                    # Show required items
-                    required_items = get_required_items(day)
-                    if required_items:
-                        st.info(f"📚 Items needed for {day}:")
-                        for item in required_items:
-                            st.write(f"• {item}")
                 else:
                     st.info(f"🎉 {day} is a holiday!")
             else:
