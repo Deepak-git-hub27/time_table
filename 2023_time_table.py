@@ -12,9 +12,10 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for modern styling
+# Custom CSS for modern styling with dark/light theme compatibility
 st.markdown("""
 <style>
+    /* Dark/Light theme compatible styles */
     .main-header {
         background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
         padding: 2rem;
@@ -22,23 +23,45 @@ st.markdown("""
         text-align: center;
         color: white;
         margin-bottom: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
     
     .card {
-        background: white;
+        background: rgba(255, 255, 255, 0.95);
+        color: #333;
         padding: 1.5rem;
         border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         margin: 1rem 0;
-        border-left: 4px solid #667eea;
+        border: 2px solid #667eea;
+        backdrop-filter: blur(10px);
+    }
+    
+    /* Dark theme support */
+    [data-theme="dark"] .card,
+    .stApp[data-theme="dark"] .card {
+        background: rgba(50, 50, 50, 0.95);
+        color: #ffffff;
+        border: 2px solid #8a9bff;
     }
     
     .subject-card {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        background: rgba(245, 247, 250, 0.95);
+        color: #2c3e50;
         padding: 1rem;
         border-radius: 8px;
         margin: 0.5rem 0;
-        border-left: 4px solid #4CAF50;
+        border: 2px solid #4CAF50;
+        font-weight: 500;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Dark theme for subject cards */
+    [data-theme="dark"] .subject-card,
+    .stApp[data-theme="dark"] .subject-card {
+        background: rgba(70, 70, 70, 0.95);
+        color: #ffffff;
+        border: 2px solid #66bb6a;
     }
     
     .holiday-card {
@@ -47,57 +70,170 @@ st.markdown("""
         border-radius: 10px;
         text-align: center;
         color: #2d3436;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border: 2px solid #fdcb6e;
     }
     
     .bag-item {
-        background: #e8f5e8;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        margin: 0.2rem 0;
+        background: rgba(232, 245, 232, 0.95);
+        color: #2e7d32;
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        margin: 0.3rem 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border: 1px solid #4caf50;
+        font-weight: 500;
+    }
+    
+    /* Dark theme for bag items */
+    [data-theme="dark"] .bag-item,
+    .stApp[data-theme="dark"] .bag-item {
+        background: rgba(46, 125, 50, 0.3);
+        color: #c8e6c9;
+        border: 1px solid #66bb6a;
     }
     
     .bag-item-missing {
-        background: #ffe8e8;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        margin: 0.2rem 0;
+        background: rgba(255, 232, 232, 0.95);
+        color: #c62828;
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        margin: 0.3rem 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border: 1px solid #f44336;
+        font-weight: 500;
+    }
+    
+    /* Dark theme for missing items */
+    [data-theme="dark"] .bag-item-missing,
+    .stApp[data-theme="dark"] .bag-item-missing {
+        background: rgba(198, 40, 40, 0.3);
+        color: #ffcdd2;
+        border: 1px solid #ef5350;
     }
     
     .stats-container {
         display: flex;
         justify-content: space-around;
         margin: 1rem 0;
+        gap: 1rem;
     }
     
     .stat-box {
-        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-        padding: 1rem;
-        border-radius: 8px;
+        background: rgba(168, 237, 234, 0.9);
+        color: #006064;
+        padding: 1.5rem;
+        border-radius: 12px;
         text-align: center;
         min-width: 120px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border: 2px solid #4dd0e1;
+        font-weight: bold;
+    }
+    
+    /* Dark theme for stat boxes */
+    [data-theme="dark"] .stat-box,
+    .stApp[data-theme="dark"] .stat-box {
+        background: rgba(0, 96, 100, 0.4);
+        color: #b2ebf2;
+        border: 2px solid #26c6da;
     }
     
     .activity-badge {
         background: #ff6b6b;
         color: white;
-        padding: 0.3rem 0.8rem;
-        border-radius: 20px;
+        padding: 0.4rem 1rem;
+        border-radius: 25px;
         font-size: 0.8rem;
-        margin-left: 0.5rem;
+        margin-left: 0.8rem;
+        font-weight: bold;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
     
     .uniform-alert {
-        background: #fff3cd;
-        border: 1px solid #ffeaa7;
-        padding: 1rem;
-        border-radius: 8px;
+        background: rgba(255, 243, 205, 0.95);
+        color: #e65100;
+        border: 2px solid #ffc107;
+        padding: 1.2rem;
+        border-radius: 10px;
         margin: 1rem 0;
+        font-weight: 500;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Dark theme for uniform alert */
+    [data-theme="dark"] .uniform-alert,
+    .stApp[data-theme="dark"] .uniform-alert {
+        background: rgba(255, 193, 7, 0.2);
+        color: #fff3e0;
+        border: 2px solid #ffb300;
+    }
+    
+    /* Additional mobile-friendly styles */
+    @media (max-width: 768px) {
+        .main-header {
+            padding: 1.5rem;
+        }
+        
+        .main-header h1 {
+            font-size: 1.5rem;
+        }
+        
+        .subject-card, .bag-item, .bag-item-missing {
+            padding: 0.8rem;
+            margin: 0.4rem 0;
+        }
+        
+        .stat-box {
+            padding: 1rem;
+            min-width: 100px;
+        }
+        
+        .stats-container {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+    
+    /* Ensure text is always readable */
+    .card h3, .card h4, .card p {
+        color: inherit;
+    }
+    
+    /* Better contrast for dark backgrounds */
+    [data-theme="dark"] .main-header,
+    .stApp[data-theme="dark"] .main-header {
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Make sure buttons work well in both themes */
+    .stButton > button {
+        border-radius: 8px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    
+    /* Custom scrollbar for better visibility */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: rgba(102, 126, 234, 0.6);
+        border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(102, 126, 234, 0.8);
     }
 </style>
 """, unsafe_allow_html=True)
