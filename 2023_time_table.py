@@ -172,7 +172,7 @@ def display_main_header():
     """, unsafe_allow_html=True)
 
 def display_timetable():
-    st.header("📅 Today's Schedule")
+    st.header("📅 Tomorrow's Schedule")
     
     tomorrow, day_name = get_tomorrow_info()
     
