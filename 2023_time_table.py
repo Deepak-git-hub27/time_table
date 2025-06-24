@@ -120,26 +120,6 @@ time_table = {
 }
 
 # Subject to books/items mapping
-subject_items = {
-    'EVS-1': ['EVS Part 1 Book', 'EVS Notebook', 'Pencil Box'],
-    'EVS-2': ['EVS Part 2 Book', 'EVS Notebook', 'Pencil Box'],
-    'COMPUTER': ['Computer Book', 'Computer Notebook', 'Pencil Box'],
-    'MATHS': ['Math Book', 'Math Notebook', 'Math Practice Book', 'Calculator', 'Geometry Box'],
-    'PT': ['PT Uniform', 'Sports Shoes', 'Water Bottle', 'Towel'],
-    'MARATHI': ['Marathi Book', 'Marathi Notebook', 'Pencil Box'],
-    'ENGLISH': ['English Book', 'English Notebook', 'English Reader', 'Dictionary'],
-    'HINDI': ['Hindi Book', 'Hindi Notebook', 'Pencil Box'],
-    'SKATING': ['Skating Shoes', 'Knee Pads', 'Elbow Pads', 'Water Bottle', 'Towel'],
-    'DANCE': ['Dance Costume', 'Dance Shoes', 'Water Bottle', 'Towel'],
-    'ART': ['Art Book', 'Color Pencils', 'Crayons', 'Drawing Book', 'Sketch Pens'],
-    'LIBRARY': ['Library Card', 'Previous Library Book (if any)'],
-    'GK': ['GK Book', 'GK Notebook', 'Pencil Box'],
-    'MPT': ['PT Uniform', 'Sports Shoes', 'Water Bottle', 'Towel'],
-    'MUSIC': ['Music Book', 'Instrument (if any)', 'Music Notebook'],
-    'ROBOTIC': ['Robotic Kit', 'Robotic Notebook', 'Pencil Box'],
-    'L&N': ['Logic & Reasoning Book', 'L&N Notebook', 'Pencil Box'],
-    'VE': ['Value Education Book', 'VE Notebook', 'Pencil Box']
-}
 
 holiday_list = [
     '2024-08-15', '2024-08-29', '2024-08-30', '2024-09-07', '2024-09-19',
@@ -174,11 +154,11 @@ def get_required_items(day):
     subjects = time_table.get(day, [])
     required_items = set()
     
-    for subject in subjects:
-        if subject in subject_items:
-            required_items.update(subject_items[subject])
+    #for subject in subjects:
+     #   if subject in subject_items:
+      #      required_items.update(subject_items[subject])
     
-    return list(required_items)
+    #return list(required_items)
 
 def display_main_header():
     st.markdown("""
